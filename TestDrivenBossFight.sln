@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDrivenBossFightTest", "TestDrivenBossFight\TestDrivenBossFightTest.csproj", "{288740E4-F130-48CF-B59E-210A3A852FC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BossFight", "BossFight\BossFight.csproj", "{7985993E-17D3-411E-ABF1-D4F090061EE1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{288740E4-F130-48CF-B59E-210A3A852FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{288740E4-F130-48CF-B59E-210A3A852FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{288740E4-F130-48CF-B59E-210A3A852FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{288740E4-F130-48CF-B59E-210A3A852FC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7985993E-17D3-411E-ABF1-D4F090061EE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7985993E-17D3-411E-ABF1-D4F090061EE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7985993E-17D3-411E-ABF1-D4F090061EE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7985993E-17D3-411E-ABF1-D4F090061EE1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29422B6A-77DC-4BAF-A30C-E21835D5E4C4}
+	EndGlobalSection
+EndGlobal
