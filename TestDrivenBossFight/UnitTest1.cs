@@ -116,11 +116,11 @@ namespace TestDrivenBossFightTest
         [Fact]
         public void TestFightTakesEnemyHealthWithStrenghtInput()
         {
-            GameCharacter boss = new(400, 20, 10);
+            GameCharacter boss = new(400, 10, 10);
             GameCharacter hero = new(100, 20, 40);
             var expectedHeroHealthAfterFight = 90;
 
-            boss.Fight(hero, 10);
+            boss.Fight(hero);
 
             Assert.Equal(expectedHeroHealthAfterFight, hero.Health);
         }
@@ -143,54 +143,55 @@ namespace TestDrivenBossFightTest
 
             Item actualItem = gameplay.GetHealthPotion();
 
-            Assert.Equal(expectedItem, actualItem);
+            Assert.Equal(expectedItem.ItemName, actualItem.ItemName);
         }
 
-        //[Fact]
-        //public void TestDrinkPotionRestoresHealth()
-        //{
-        //    GameCharacter boss = new GameCharacter(400, 20, 10);
-        //    GameCharacter hero = new GameCharacter(100, 20, 40);
+        [Fact]
+        public void TestDrinkPotionRestoresHealth()
+        {
+            GameCharacter boss = new GameCharacter(400, 20, 10);
+            GameCharacter hero = new GameCharacter(100, 20, 40);
 
-        //    boss.Fight(hero, 90);
-        //    Assert.AreEqual(10, hero.Health);
+            boss.Fight(hero);
+            Assert.Equal(10, hero.Health);
 
-        //    hero.DrinkHealthPotion();
+            hero.DrinkHealthPotion();
 
-        //    Assert.AreEqual(hero.Health, 100);
-        //}
+            Assert.Equal(100, hero.Health);
+        }
 
-        //[Fact]
-        //public void TestFindRandomItem()
-        //{
-        //    GamePlay gameplay = new GamePlay();
+        [Fact]
+        public void TestFindRandomItem()
+        {
+            GamePlay gameplay = new GamePlay();
 
-        //    Item droppedItem = gameplay.GetRandomItemToDrop();
+            Item droppedItem = gameplay.GetRandomItemToDrop();
 
-        //    Assert.IsNotNull(droppedItem);
-        //}
+            Assert.NotNull(droppedItem);
+        }
 
-        //[Fact]
-        //public void TestDrinkStaminaPotionRestoresStamina()
-        //{
-        //    GameCharacter hero = new GameCharacter(100, 20, 40);
+        [Fact]
+        public void TestDrinkStaminaPotionRestoresStamina()
+        {
+            GameCharacter hero = new GameCharacter(100, 20, 40);
 
-        //    hero.DrainStamina(40);
-        //    hero.DrinkStaminaPotion();
+            hero.DrainStamina(40);
+            hero.DrinkStaminaPotion();
 
-        //    Assert.AreEqual(hero.Stamina, 40);
-        //}
+            Assert.Equal(40, hero.Stamina);
+        }
 
 
-        //[Fact]
-        //public void TestDrinkStrengthPotionTakesAdditionalDamage()
-        //{
-        //    GameCharacter hero = new GameCharacter(100, 20, 40);
-        //    GameCharacter boss = new GameCharacter(400, 20, 10);
+        [Fact]
+        public void TestDrinkStrengthPotionTakesAdditionalDamage()
+        {
+            GameCharacter hero = new GameCharacter(100, 20, 40);
+            GameCharacter boss = new GameCharacter(400, 20, 10);
 
-        //    hero.DrinkStrengthPotion();
+            hero.DrinkStrengthPotion();
+            hero.Fight(boss);
 
-        //    Assert.AreEqual(boss.Health, 370);
-        //}
+            Assert.Equal(370, boss.Health);
+        }
     }
 }

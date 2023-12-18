@@ -11,12 +11,16 @@ namespace BossFight
         public int Health {  get; set; }
         public int Strength {  get; set; }
         public int Stamina {  get; set; }
+
+        public int MaxHealth { get; set; }
         public int MaxStamina { get; set; }
+
         public GameCharacter(int health, int strength, int stamina)
         {
             Health = health;
             Strength = strength;
             Stamina = stamina;
+            MaxHealth = health;
             MaxStamina = Stamina;
         }
 
@@ -25,19 +29,7 @@ namespace BossFight
             if (Stamina >= 10)
             {
                 DrainStamina(10);
-                enemy.Health -= 20;
-            }
-            else
-            {
-                Recharge();
-            }
-        }
-        public void Fight(GameCharacter enemy, int damage)
-        {
-            if (Stamina >= 10)
-            {
-                enemy.DrainStamina(10);
-                enemy.Health -= damage;
+                enemy.Health -= Strength;
             }
             else
             {
@@ -55,6 +47,18 @@ namespace BossFight
         public void Recharge()
         {
             Stamina = MaxStamina;
+        }
+        public void DrinkHealthPotion()
+        {
+            Health = MaxHealth;
+        }
+        public void DrinkStaminaPotion()
+        {
+            Recharge();
+        }
+        public void DrinkStrengthPotion()
+        {
+            Strength += 10;
         }
     }
 }

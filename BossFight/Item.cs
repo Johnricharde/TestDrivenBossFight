@@ -8,7 +8,8 @@ namespace BossFight
 {
     public class Item
     {
-        string ItemName { get; set; }
+        public string ItemName { get; set; }
+
         public Item(string itemName)
         {
             ItemName = itemName;

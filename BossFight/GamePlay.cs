@@ -20,5 +20,9 @@ namespace BossFight
         {
             return new Item("HealthPotion");
         }
+        public Item GetRandomItemToDrop()
+        {
+            return new Item("Item");
+        }
     }
 }
